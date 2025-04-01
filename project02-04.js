@@ -18,11 +18,13 @@
  const CHICKEN_PRICE = 10.95, HALIBUT_PRICE = 13.95, BURGER_PRICE = 9.95, SALMON_PRICE = 18.95, SALAD_PRICE = 7.95, SALES_TAX = 0.07;
 
 //STep 5//
-document.getElementById("chicken").onchange = CalcTotal;
-document.getElementById("halibut").onchange = CalcTotal;
-document.getElementById("burger").onchange = CalcTotal;
-document.getElementById("salmon").onchange = CalcTotal;
-document.getElementById("salad").onchange = CalcTotal;
+window.onload = function() {
+   document.getElementById("chicken").onchange = calcTotal;
+   document.getElementById("halibut").onchange = calcTotal;
+   document.getElementById("burger").onchange = calcTotal;
+   document.getElementById("salmon").onchange = calcTotal;
+   document.getElementById("salad").onchange = calcTotal;
+};
 
 
  //Step 4//
@@ -50,6 +52,9 @@ document.getElementById("salad").onchange = CalcTotal;
   document.getElementById("totalBill").innerHTML = formatCurrency(totalCost);
 
  }
+
+
+
 
 
 
