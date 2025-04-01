@@ -18,11 +18,11 @@
  const CHICKEN_PRICE = 10.95, HALIBUT_PRICE = 13.95, BURGER_PRICE = 9.95, SALMON_PRICE = 18.95, SALAD_PRICE = 7.95, SALES_TAX = 0.07;
 
 //STep 5//
-document.getElementById("chicken")?.addEventListener("click", calcTotal);
-document.getElementById("halibut")?.addEventListener("click", calcTotal);
-document.getElementById("burger")?.addEventListener("click", calcTotal);
-document.getElementById("salmon")?.addEventListener("click", calcTotal);
-document.getElementById("salad")?.addEventListener("click", calcTotal);
+document.getElementById("chicken").onchange = CalcTotal;
+document.getElementById("halibut").onchange = CalcTotal;
+document.getElementById("burger").onchange = CalcTotal;
+document.getElementById("salmon").onchange = CalcTotal;
+document.getElementById("salad").onchange = CalcTotal;
 
 
  //Step 4//
@@ -40,17 +40,15 @@ document.getElementById("salad")?.addEventListener("click", calcTotal);
    cost += buySalmon ? SALMON_PRICE : 0;
    cost += buySalad ? SALAD_PRICE : 0;
 
-if (document.getElementById("foodTotal")) {
+       let tax = cost * SALES_TAX;
+       let totalCost = cost + tax;
+
   document.getElementById("foodTotal").innerHTML = formatCurrency(cost);
-}
-let tax = cost * SALES_TAX;
-if (document.getElementById("foodTax")) {
+
   document.getElementById("foodTax").innerHTML = formatCurrency(tax);
-}
-let totalCost = cost + tax;
-if (document.getElementById("totalBill")) {
+
   document.getElementById("totalBill").innerHTML = formatCurrency(totalCost);
-}
+
  }
 
 
